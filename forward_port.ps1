@@ -9,6 +9,10 @@ if ($Args.Length -lt 2){
 $host_port = $Args[0]
 $wsl_port = $Args[1]
 
+# DO NOT TRY to auto-get the wsl ip from wsl command, which gives messy output due to encoding issues.
+# If you have multiple wsl distributions, you get the wsl ip address from "wsl -d <disto name> hostname -I" command manually.
+
+#If only one wsl distribution, the following setting works fine.
 $wsl_ip = "127.0.0.1"
 
 # Forward wsl port
